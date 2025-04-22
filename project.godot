@@ -1,0 +1,47 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Insider Alert!"
+run/main_scene="uid://bg41i5fuq6qdv"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0.835294, 0.929412, 0.968627, 1)
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+
+[audio]
+
+buses/default_bus_layout="res://scenes/global/misc/default_bus_layout.tres"
+general/default_playback_type.web=0
+
+[autoload]
+
+Data="*res://scenes/global/data.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[editor]
+
+naming/node_name_casing=2
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.835294, 0.929412, 0.968627, 1)

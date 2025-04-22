@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2h8ok8yfc7wb"]
+
+[ext_resource type="Script" uid="uid://dqfoltehb4px" path="res://addons/silent_wolf/Scores/Leaderboard.gd" id="1"]
+[ext_resource type="Theme" uid="uid://d2eakbmaefnt6" path="res://addons/silent_wolf/assets/themes/sw_theme.tres" id="2_ixaq4"]
+[ext_resource type="FontFile" uid="uid://bpy40akfrsaju" path="res://assets/common/font/Montserrat-Medium.ttf" id="3_5pbpo"]
+
+[sub_resource type="Theme" id="Theme_j1gah"]
+default_font = ExtResource("3_5pbpo")
+
+[node name="Leaderboard" type="Node2D"]
+script = ExtResource("1")
+
+[node name="OldBoard" type="MarginContainer" parent="."]
+visible = false
+
+[node name="HighScores" type="TextureRect" parent="OldBoard"]
+layout_mode = 2
+
+[node name="Board" type="VBoxContainer" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1088.0
+offset_bottom = 504.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_ixaq4")
+theme_override_constants/separation = 48
+
+[node name="TitleContainer" type="CenterContainer" parent="Board"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="Board/TitleContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.254902, 0.607843, 0.717647, 1)
+theme_override_fonts/font = ExtResource("3_5pbpo")
+theme_override_font_sizes/font_size = 72
+text = "Leaderboard"
+horizontal_alignment = 1
+
+[node name="MessageContainer" type="CenterContainer" parent="Board"]
+modulate = Color(0.196078, 0.196078, 0.196078, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="TextMessage" type="Label" parent="Board/MessageContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5pbpo")
+theme_override_font_sizes/font_size = 36
+text = "Loading scores..."
+
+[node name="HighScores" type="ScrollContainer" parent="Board"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_j1gah")
+
+[node name="ScoreItemContainer" type="VBoxContainer" parent="Board/HighScores"]
+modulate = Color(0.197937, 0.197937, 0.197937, 1)
+layout_mode = 2
